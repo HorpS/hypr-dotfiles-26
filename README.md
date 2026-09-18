@@ -1,3 +1,5 @@
+<img width="1920" height="1080" alt="2026-09-18-214657_hyprshot" src="https://github.com/user-attachments/assets/2a2db84c-c479-460d-8fdd-7f6aa79c61ed" />
+<img width="1920" height="1080" alt="2026-09-18-214608_hyprshot" src="https://github.com/user-attachments/assets/a5063b26-af44-4ba9-a398-fad2d17226d1" />
 # Horp's Linux dotfiles
 
 This repository contains reproducible user configuration for an Arch Linux desktop using Hyprland, Waybar, SwayNC, KDE applications, Alacritty, Wofi, GTK, and shell tools.
