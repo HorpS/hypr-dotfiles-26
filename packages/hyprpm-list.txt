@@ -1,0 +1,4 @@
+[0m→[0m Repository HyprGlass (by hyprnux):
+  │ Plugin hyprglass
+  └─ enabled: [32mtrue
+[0m

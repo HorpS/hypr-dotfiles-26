@@ -1,0 +1,100 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 15,
+  "spacing": 3,
+  "modules-left": [
+    "custom/notifications",
+    "hyprland/language",
+    "clock",
+    "tray"
+  ],
+  "modules-center": [
+    "ext/workspaces"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "battery"
+  ],
+  "ext/workspaces": {
+    "on-click": "activate",
+    "format": "●"
+  },
+  "hyprland/language": {
+    "format": "{short}"
+  },
+  "clock": {
+    "format": "{:%I:%M:%S %p}",
+    "tooltip-format": "{:%A, %d %B %Y}",
+    "interval": 1
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  Muted",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "states": {
+      "warning": 25,
+      "critical": 10
+    },
+    "format-plugged": "  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "tray": {
+    "spacing": 8
+  },
+  "custom/notifications": {
+    "format": "",
+    "on-click": "swaync-client -t",
+    "tooltip": true,
+    "tooltip-format": "Notifications"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-off": "",
+    "format-disabled": "",
+    "format-no-controller": "",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "Bluetooth: {status}",
+    "tooltip-format-connected": "Bluetooth: {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-no-controller": "Bluetooth unavailable"
+  },
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "  {percent}%",
+    "on-scroll-up": "brightnessctl -d amdgpu_bl1 set +5%",
+    "on-scroll-down": "brightnessctl -d amdgpu_bl1 -n 1 set 5%-",
+    "tooltip-format": "Screen brightness: {percent}%"
+  },
+  "margin-top": 6,
+  "margin-left": 8,
+  "margin-right": 8
+}

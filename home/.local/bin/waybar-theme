@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+theme="${1:-}"
+config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/waybar"
+
+case "$theme" in
+    light) source="$config_dir/manual-light.css" ;;
+    dark)  source="$config_dir/manual-dark.css" ;;
+    *)
+        echo "Usage: waybar-theme {light|dark}" >&2
+        exit 2
+        ;;
+esac
+
+test -f "$source"
+cp "$source" "$config_dir/style.css"
+pkill -USR2 -u "$(id -u)" -x waybar
+
+if command -v copyq >/dev/null && pgrep -u 1000 -x copyq >/dev/null; then
+    case "$theme" in
+        light) copyq eval 'iconColor("#1a1a1a")' ;;
+        dark) copyq eval 'iconColor("#e0e0e0")' ;;
+    esac
+fi

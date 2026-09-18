@@ -1,0 +1,14 @@
+# Never commit secrets, credentials, runtime state, or generated assets.
+.env*
+*.pem
+*.key
+*.sqlite*
+*.db*
+home/.ssh/
+home/.config/mozilla/
+home/.config/pulse/
+home/.config/dconf/
+home/.config/copyq/
+home/.config/hypr/current-wallpaper
+home/.local/state/
+home/.cache/
